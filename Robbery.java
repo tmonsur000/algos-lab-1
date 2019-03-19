@@ -1,7 +1,5 @@
 // You have a heist getaway sack with a capacity, and n items in front of you
-// with sizes and worths. Figure out the maximum value you could
-// get with the items.
-
+// with sizes and worths. Figure out the maximum value you could get with the items.
 // You are encouraged to make helper functions!
 
 public class Robbery {
@@ -12,10 +10,16 @@ public class Robbery {
 		int[] sizes,
 		int[] worths
 	) {
-		// fill in here, change the return
-			return 0;
+	// fill in here, change the return
+	//recusive call till the bag is full
+	//check each items worth by dividing the size by worths and ten comparing adjacent items
+	//afte all the comparisions are done the program will store the one with highest worth
+	//repeat this step untill all we reach the capacity or the maximum probability  
+		
+		return 0;
 	}
 
+	
 	public int maximizeRobWorthBottomUp(
 		int capacity,
 		int[] sizes,
@@ -38,8 +42,9 @@ public class Robbery {
 	public static void main(String[] args) {
 		Robbery r = new Robbery();
 		int bagCapacity = 40;
-		int[] itemSizes = {2, 25, 6, 13, 1, 15, 8, 5, 17, 4};
-		int[] itemWorths = {35, 120, 900, 344, 29, 64, 67, 95, 33, 10};
+		int[] itemSizes =  {2, 25,  6, 13, 1, 15, 8, 5, 17, 4};
+		int[] itemWorths = {35,120,900,344,29,64, 67,95,33, 10};
+			   //worth= 17, 5, 150, 26,29, 4,  8,19, 2, 2.5
 
 		int maxWorthRecur = r.maximizeRobWorthRecur(bagCapacity, itemSizes, itemWorths);
 		System.out.println("Max worth of the bag: " + maxWorthRecur);
